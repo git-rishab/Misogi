@@ -1,42 +1,76 @@
-# Natural Language Task Manager
+# 🚀 Natural Language Task Manager
 
-A beautiful React-based web application that allows users to add tasks using natural language input and displays them in an organized, attractive task board interface.
+A modern, AI-powered task management application that allows users to create and organize tasks using natural language input. Built with React, Express.js, and Tailwind CSS.
 
-## 🚀 Features
+## ✨ Features
 
--   **Natural Language Processing**: Add tasks using everyday language
+-   **Natural Language Processing**: Add tasks using everyday language like "Finish the landing page for John by tomorrow 5pm"
+-   **AI-Powered Transcript Parser**: Extract multiple tasks from meeting transcripts automatically
+-   **Smart Task Organization**: Automatically extracts task details, assignees, due dates, and priorities
 -   **Beautiful UI**: Modern, responsive design with Tailwind CSS
--   **Real-time Updates**: Instant task addition and updates
--   **Priority Management**: Color-coded priority levels (P1-P4)
--   **Task Management**: Mark tasks complete, delete tasks
--   **Local Storage**: Tasks persist between browser sessions
--   **Error Handling**: Graceful error states and loading indicators
--   **Mobile Responsive**: Works perfectly on all device sizes
+-   **Priority Color Coding**: Visual priority indicators (P1-P4) with color-coded badges
+-   **Real-time Validation**: Instant feedback and error handling
+-   **Local Storage**: Tasks persist across browser sessions
+-   **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## 🎯 Demo
+
+### Single Task Input
+
+Users can add individual tasks using natural language:
+
+-   "Complete the marketing deck for Sarah by Friday 3pm P2 priority"
+-   "Review client proposal Aman tomorrow morning"
+-   "Deploy the website by 11pm tonight P1"
+
+### AI Transcript Parser
+
+Extract multiple tasks from meeting transcripts:
+
+```
+"Aman you take the landing page by 10pm tomorrow. Rajeev you take care of client follow-up by Wednesday. Shreya please review the marketing deck tonight."
+```
+
+## 📸 Screenshots
+
+### Main Interface
+
+<!-- Screenshot 1: Add your main interface screenshot here -->
+
+_Screenshot showing the main task manager interface with both single task input and task table_
+
+### AI Transcript Parser
+
+<!-- Screenshot 2: Add your transcript parser screenshot here -->
+
+_Screenshot showing the AI transcript parser with parsed tasks preview_
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 
--   **React 19** - Modern React with latest features
--   **Vite** - Fast build tool and dev server
+-   **React 18** - Modern React with hooks
+-   **Vite** - Fast build tool and development server
 -   **Tailwind CSS** - Utility-first CSS framework
--   **Local Storage** - Browser-based persistence
+-   **JavaScript (ES6+)** - Modern JavaScript features
 
 ### Backend
 
 -   **Node.js** - JavaScript runtime
--   **Express** - Web application framework
--   **Google Gemini API** - Natural language processing (optional)
+-   **Express.js** - Web application framework
+-   **Google Gemini API** - AI-powered natural language processing
 -   **CORS** - Cross-origin resource sharing
+-   **Axios** - HTTP client for API requests
 
-## 📦 Installation
+## 🚀 Getting Started
 
 ### Prerequisites
 
 -   Node.js (v16 or higher)
--   npm or yarn
+-   npm or yarn package manager
+-   Google API key for Gemini (optional - falls back to mock responses)
 
-### Setup
+### Installation
 
 1. **Clone the repository**
 
@@ -45,221 +79,211 @@ A beautiful React-based web application that allows users to add tasks using nat
     cd "Natural Language Task Manager"
     ```
 
-2. **Install Frontend Dependencies**
-
-    ```bash
-    cd client
-    npm install
-    ```
-
-3. **Install Backend Dependencies**
-
-    ```bash
-    cd ../server
-    npm install
-    ```
-
-4. **Environment Configuration (Optional)**
-    ```bash
-    # In the server directory
-    cp .env.example .env
-    # Edit .env and add your Google Gemini API key
-    ```
-
-## 🚀 Running the Application
-
-### Development Mode
-
-1. **Start the Backend Server**
+2. **Install backend dependencies**
 
     ```bash
     cd server
-    npm run dev
+    npm install
     ```
 
-    Server will run on `http://localhost:3001`
-
-2. **Start the Frontend (in a new terminal)**
+3. **Install frontend dependencies**
 
     ```bash
-    cd client
-    npm run dev
+    cd ../client
+    npm install
     ```
 
-    Frontend will run on `http://localhost:5173`
+4. **Set up environment variables (optional)**
 
-3. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-### Production Mode
-
-1. **Build the Frontend**
+    Create a `.env` file in the `server` directory:
 
     ```bash
-    cd client
-    npm run build
+    cd ../server
+    touch .env
     ```
 
-2. **Start the Backend**
+    Add your Google Gemini API key:
+
+    ```env
+    API_KEY=your_google_gemini_api_key_here
+    ```
+
+    _Note: If no API key is provided, the application will use mock responses for development._
+
+### Running the Application
+
+1. **Start the backend server**
+
     ```bash
     cd server
     npm start
     ```
 
-## 💡 Usage
+    The server will start on `http://localhost:3001`
 
-### Adding Tasks
+2. **Start the frontend development server**
 
-Simply type your task in natural language in the input field. Examples:
+    In a new terminal:
 
--   `"Finish landing page Aman by 11pm 20th June"`
--   `"Call client Rajeev tomorrow 5pm P1 priority"`
--   `"Review documents Mike by Friday 2pm"`
--   `"Send email to team today P2 urgent"`
+    ```bash
+    cd client
+    npm run dev
+    ```
 
-### Task Information Extracted
+    The frontend will start on `http://localhost:5173`
 
-The system automatically extracts:
+3. **Open your browser**
 
--   **Task Description**: What needs to be done
--   **Assignee**: Who should do it
--   **Due Date/Time**: When it's due
--   **Priority**: P1 (highest) to P4 (lowest), defaults to P3
+    Navigate to `http://localhost:5173` to use the application.
+
+## 📋 Usage
+
+### Adding Single Tasks
+
+1. Use the main input field to describe your task in natural language
+2. Include details like:
+    - Task description
+    - Assignee name
+    - Due date/time
+    - Priority level (P1, P2, P3, P4)
+3. Click "Add Task" or press Enter
+4. The AI will parse your input and create a structured task
+
+**Example inputs:**
+
+-   `"Finish the presentation for John by tomorrow 2pm"`
+-   `"Call client Sarah Friday morning P1 priority"`
+-   `"Review code Aman by end of day"`
+
+### Using the AI Transcript Parser
+
+1. Click on the "AI Transcript Parser" tab
+2. Paste your meeting transcript into the text area
+3. Click "Parse Tasks" to extract all tasks automatically
+4. Review the parsed tasks in the preview cards
+5. Remove any unwanted tasks by clicking the X button
+6. Click "Add All Tasks" to add them to your task list
 
 ### Managing Tasks
 
--   **Complete Tasks**: Click the checkbox to mark tasks as done
--   **Delete Tasks**: Click the trash icon to remove tasks
--   **Priority Colors**:
-    -   P1: Red (Urgent)
-    -   P2: Orange (High)
-    -   P3: Blue (Normal) - Default
-    -   P4: Gray (Low)
+-   **Complete tasks**: Click the checkbox next to any task
+-   **Delete tasks**: Click the trash icon in the task row
+-   **View details**: All task information is displayed in the table
+-   **Priority indicators**: Color-coded badges show task priorities
 
-## 🎨 UI Features
-
-### Beautiful Design Elements
-
--   **Modern Header**: Clean branding and description
--   **Intuitive Input**: Large, friendly input field with examples
--   **Loading States**: Smooth loading animations
--   **Success/Error Messages**: Clear feedback to users
--   **Empty State**: Helpful guidance when no tasks exist
--   **Color-coded Priorities**: Visual priority system
--   **Avatar Circles**: User-friendly assignee display
--   **Responsive Layout**: Perfect on desktop and mobile
-
-### Accessibility
-
--   **ARIA Labels**: Screen reader friendly
--   **Keyboard Navigation**: Full keyboard support
--   **High Contrast**: Good color contrast ratios
--   **Focus States**: Clear focus indicators
-
-## 🔧 Configuration
-
-### Backend API
-
-The backend supports both AI-powered and mock responses:
-
--   **With API Key**: Uses Google Gemini for intelligent parsing
--   **Without API Key**: Uses rule-based parsing for development
-
-### Customization
-
-You can customize:
-
--   **Colors**: Edit Tailwind classes in components
--   **API Endpoint**: Change in `App.jsx`
--   **Storage Key**: Modify in `taskUtils.js`
--   **Priority Levels**: Adjust in utility functions
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 Natural Language Task Manager/
-├── client/                   # React frontend
+├── README.md
+├── client/                          # React frontend
 │   ├── src/
-│   │   ├── components/      # React components
-│   │   │   ├── TaskInput.jsx
-│   │   │   ├── TaskTable.jsx
-│   │   │   └── TaskRow.jsx
-│   │   ├── utils/           # Utility functions
-│   │   │   └── taskUtils.js
-│   │   ├── App.jsx          # Main app component
-│   │   ├── main.jsx         # Entry point
-│   │   └── index.css        # Tailwind styles
-│   ├── public/              # Static assets
-│   └── package.json
-├── server/                  # Express backend
-│   ├── server.js           # Main server file
-│   ├── .env.example        # Environment template
-│   └── package.json
-└── README.md               # Project documentation
+│   │   ├── App.jsx                 # Main application component
+│   │   ├── components/
+│   │   │   ├── TaskInput.jsx       # Single task input component
+│   │   │   ├── TaskTable.jsx       # Task display table
+│   │   │   ├── TaskRow.jsx         # Individual task row
+│   │   │   └── TranscriptParser.jsx # AI transcript parser
+│   │   ├── utils/
+│   │   │   └── taskUtils.js        # Utility functions
+│   │   └── index.css               # Tailwind CSS styles
+│   ├── package.json
+│   └── vite.config.js
+└── server/                         # Express.js backend
+    ├── server.js                   # Main server file
+    └── package.json
 ```
 
-## 🧪 Testing
+## 🎨 Features in Detail
 
-### Manual Testing
+### Smart Task Parsing
 
-Test with various input formats:
+The application uses AI to extract structured information from natural language:
 
--   `"Complete project review by tomorrow"`
--   `"Schedule meeting with John Monday 3pm P1"`
--   `"Buy groceries today"`
--   `"Prepare presentation Sarah by Friday morning P2"`
+-   **Task Name**: Main action or objective
+-   **Assignee**: Person responsible for the task
+-   **Due Date/Time**: When the task should be completed
+-   **Priority**: Importance level (P1-P4, defaults to P3)
 
-### API Testing
+### Priority System
 
-Test the backend directly:
+-   **P1 (Red)**: Urgent, critical tasks
+-   **P2 (Orange)**: High priority tasks
+-   **P3 (Blue)**: Normal priority tasks (default)
+-   **P4 (Gray)**: Low priority tasks
 
-```bash
-curl -X POST http://localhost:3001/api/parse-task \
-  -H "Content-Type: application/json" \
-  -d '{"taskText": "Finish report John by Friday 5pm P1"}'
+### Data Persistence
+
+Tasks are automatically saved to browser localStorage and restored on page reload.
+
+## 🔧 API Endpoints
+
+### POST `/api/parse-task`
+
+Parse a single natural language task description.
+
+**Request Body:**
+
+```json
+{
+    "taskText": "Complete the report for John by Friday 3pm"
+}
 ```
 
-## 🚀 Deployment
+**Response:**
 
-### Frontend Deployment
+```
+Task	Assigned To	Due Date/Time	Priority
+Complete the report	John	3:00 PM Friday	P3
+```
 
--   Build with `npm run build`
--   Deploy `dist/` folder to any static hosting service
--   Popular options: Vercel, Netlify, GitHub Pages
+### POST `/api/parse-transcript`
 
-### Backend Deployment
+Parse multiple tasks from a meeting transcript.
 
--   Deploy to Node.js hosting service
--   Popular options: Railway, Render, Heroku
--   Set environment variables in hosting platform
+**Request Body:**
+
+```json
+{
+    "transcript": "John, please finish the landing page by tomorrow. Sarah, review the marketing materials by Friday."
+}
+```
+
+**Response:**
+
+```json
+{
+    "tasks": [
+        {
+            "task": "Finish the landing page",
+            "assignedTo": "John",
+            "dueDateTime": "Tomorrow",
+            "priority": "P3"
+        },
+        {
+            "task": "Review the marketing materials",
+            "assignedTo": "Sarah",
+            "dueDateTime": "Friday",
+            "priority": "P3"
+        }
+    ]
+}
+```
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgments
 
--   Built with React and Tailwind CSS
--   Natural language processing powered by Google Gemini API
--   Icons from Heroicons
--   Inspired by modern task management applications
-
-## 📞 Support
-
-If you have any questions or issues:
-
-1. Check the existing issues in the repository
-2. Create a new issue with detailed description
-3. Include steps to reproduce for bugs
-
----
-
-**Happy Task Managing! 🎯**
+-   Google Gemini API for natural language processing
+-   Tailwind CSS for the beautiful UI components
+-   React and Vite for the development experience
