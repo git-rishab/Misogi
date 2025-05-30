@@ -36,12 +36,16 @@ Extract multiple tasks from meeting transcripts:
 ### Main Interface
 
 <!-- Screenshot 1: Add your main interface screenshot here -->
+<img width="1202" alt="Screenshot 2025-05-30 at 3 13 30 PM" src="https://github.com/user-attachments/assets/6d4bbcfb-05df-467e-9c29-aaf6253bac75" />
 
 _Screenshot showing the main task manager interface with both single task input and task table_
 
 ### AI Transcript Parser
 
 <!-- Screenshot 2: Add your transcript parser screenshot here -->
+<img width="976" alt="Screenshot 2025-05-30 at 3 21 09 PM" src="https://github.com/user-attachments/assets/888acc8f-07f1-47f9-a3ee-653ec87d050b" />
+
+
 
 _Screenshot showing the AI transcript parser with parsed tasks preview_
 
@@ -269,21 +273,3 @@ Parse multiple tasks from a meeting transcript.
     ]
 }
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
--   Google Gemini API for natural language processing
--   Tailwind CSS for the beautiful UI components
--   React and Vite for the development experience
