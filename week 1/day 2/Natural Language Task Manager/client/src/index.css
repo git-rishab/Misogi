@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  .priority-p1 {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  .priority-p2 {
+    @apply bg-orange-50 border-orange-200 text-orange-800;
+  }
+
+  .priority-p3 {
+    @apply bg-blue-50 border-blue-200 text-blue-800;
+  }
+
+  .priority-p4 {
+    @apply bg-gray-50 border-gray-200 text-gray-800;
+  }
+
+  .priority-badge-p1 {
+    @apply bg-red-100 text-red-800 border-red-300;
+  }
+
+  .priority-badge-p2 {
+    @apply bg-orange-100 text-orange-800 border-orange-300;
+  }
+
+  .priority-badge-p3 {
+    @apply bg-blue-100 text-blue-800 border-blue-300;
+  }
+
+  .priority-badge-p4 {
+    @apply bg-gray-100 text-gray-800 border-gray-300;
+  }
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}

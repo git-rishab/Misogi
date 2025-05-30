@@ -1,0 +1,39 @@
+/* Custom styles for the Task Manager App */
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-row-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.task-row-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.task-row-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.task-row-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
